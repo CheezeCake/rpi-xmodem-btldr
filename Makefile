@@ -14,9 +14,13 @@ ifeq ($(rpi), 1)
 	cargo_target_dir=arm-none-eabi
 	kernel_img=kernel.img
 else
+ifeq ($(rpi), 2)
 	ASFLAGS=-mcpu=cortex-a7
 	cargo_target=armv7a-none-eabi
 	kernel_img=kernel7.img
+else
+	$(error not yet supported)
+endif
 endif
 
 ASFLAGS+=-DRPI=$(rpi)
