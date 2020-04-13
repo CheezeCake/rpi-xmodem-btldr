@@ -1,0 +1,20 @@
+[package]
+name = "rpi-xmodem-btldr"
+version = "0.1.0"
+authors = ["Emmanuel Nicolet <emmanuel.nicolet@gmail.com>"]
+edition = "2018"
+
+[lib]
+crate-type = ["staticlib"]
+
+[profile.dev]
+panic = "abort" # disable stack unwinding on panic
+
+[profile.release]
+panic = "abort" # disable stack unwinding on panic
+
+[features]
+rpi_1 = []
+rpi_2 = []
+
+[dependencies]
